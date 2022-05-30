@@ -1,0 +1,109 @@
+@import 'variables';
+
+/* General page parameters */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navbarfont{
+    font-family: map-get($map: $navbarfont, $key: font5),map-get($map: $navbarfont, $key: font6);
+}
+
+.navbarfont2{
+    font-family: map-get($map: $navbarfont2, $key: font9),map-get($map: $navbarfont2, $key: font10);
+    font-size: 100px;
+}
+
+.navbarfont3{
+    font-family: map-get($map: $navbarfont2, $key: font9),map-get($map: $navbarfont2, $key: font10);
+    font-size: 50px;
+}
+
+.graybody{
+    background-color: $back-groundbody;
+}
+
+.transition {
+    transition: $transitions;
+    margin: 40px auto 0;
+
+&:hover{
+    width: 100%;
+    margin: 0% auto;
+}
+}
+
+.copyright{
+    padding: 2%;
+    margin-bottom: 0%;
+    background-color: $back-groundfooter;
+    color: white;
+    font-size: 12px;
+
+    font-weight: map-get($map: $pagefont, $key: font1);
+    text-align: map-get($map: $pagefont, $key: font2);
+    font-family: map-get($map: $navbarfont, $key: font5),map-get($map: $navbarfont, $key: font6);
+
+    
+}
+
+@mixin sizes($w, $h){
+    width: $w;
+    height: $h;
+}
+
+.lents{
+    width: $sellwight/2;
+    height: $autoimage;
+    border-color: black;
+    border-style:solid;
+}
+
+@each $sell, $color in $sellscolors{
+    .btn--#{$sell}{
+        background-color: $color;
+    }
+}
+
+@media screen and (max-width: 1100px){
+
+    .lents{
+        @include sizes($sellwight/3, $autoimage);
+        border-color: black;
+        border-style:solid;
+    }
+
+    .navbarfont2{
+        font-family: map-get($map: $navbarfont2, $key: font9),map-get($map: $navbarfont2, $key: font10);
+        font-size: 60px;
+    }
+    
+    .navbarfont3{
+        font-family: map-get($map: $navbarfont2, $key: font9),map-get($map: $navbarfont2, $key: font10);
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+
+    .lents{
+        width: $sellwight/4;
+        height: $autoimage;
+        border-color: black;
+        border-style:solid;
+    }
+
+    .navbarfont2{
+        font-family: map-get($map: $navbarfont2, $key: font9),map-get($map: $navbarfont2, $key: font10);
+        font-size: 40px;
+    }
+    
+    .navbarfont3{
+        font-family: map-get($map: $navbarfont2, $key: font9),map-get($map: $navbarfont2, $key: font10);
+        font-size: 10px;
+    }
+
+}
